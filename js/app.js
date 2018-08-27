@@ -23,11 +23,11 @@
 
         this.hideVisibleFurry = function() {
             const classFurry = document.querySelector('.furry');
-            if (classFurry) { classFurry.classList.toggle('furry');}
+            if (classFurry) { classFurry.classList = remove('furry');}
         };
         this.showFurry = function() {
             this.hideVisibleFurry();
-            this.board[this.index(this.furry.x, this.furry.y)].classList.toggle('furry');
+            this.board[this.index(this.furry.x, this.furry.y)].classList.add('furry');
         };
         this.showCoin = function() {
             this.board[this.index(this.coin.x, this.coin.y)].classList.add('coin');
@@ -42,8 +42,7 @@
             let that = this;
             that.idSetInterval = setInterval(function () {
                 that.moveFurry();
-                console.log('hura z setintervala');
-            }, 2000);
+            }, 300);
         };
         this.turnFurry = function (event) {
             switch(event.which){
@@ -107,8 +106,7 @@
     gameNew.startGame();
 
     document.addEventListener('keydown', function (event) {
-        console.log('you pressed key');
-        gameNew.turnFurry(event);
+        this.gameNew.turnFurry(event);
     });
 
 
